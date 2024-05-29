@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = ["hospital-managment.onrender.com"]
+ALLOWED_HOSTS = ["https://hospital-managment-t48p.onrender.com"]
 
 
 # Application definition
