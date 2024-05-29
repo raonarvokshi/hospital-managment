@@ -1,0 +1,97 @@
+#home {
+    background-image: url('../assets/img/hospital.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 94vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link {
+    position: relative;
+    overflow: hidden;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #66d9e8;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.link:hover::after {
+    transform: scale(1);
+}
+
+.dt-buttons {
+    margin-top: 50px !important;
+}
+
+input {
+    position: relative;
+    bottom: 40px;
+}
+
+.buttons-copy {
+    margin-right: 5px;
+    background-color: #08cee9;
+    border: none;
+}
+
+.buttons-copy:hover {
+    background-color: #30d9f0;
+}
+
+.buttons-excel {
+    margin-right: 5px;
+    background-color: #08cee9;
+    border: none;
+}
+
+.buttons-excel:hover {
+    background-color: #30d9f0;
+}
+
+.buttons-csv {
+    background-color: #08cee9;
+    border: none;
+}
+
+.buttons-csv:hover {
+    background-color: #30d9f0;
+}
+
+.buttons-pdf {
+    margin-right: 5px;
+    background-color: #08cee9;
+    border: none;
+}
+
+.buttons-pdf:hover {
+    background-color: #30d9f0;
+}
+
+.add-doc-container {
+    margin-top: 8em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-patient-container {
+    margin-top: 5em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-doc-btn:hover {
+    color: #fff !important;
+}

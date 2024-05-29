@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <div class="shadow-lg p-5 add-doc-container">
+            <div class="text-center">
+                <h1 class="d-inline-block border-bottom border-3 border-info mb-5">Add New Appointment</h1>
+            </div>
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-6 mb-5 mt-2">
+                        <select name="doctor" id="doctor" class="form-select form-select-lg">
+                            <option value="Choose Doctor" selected disabled>Choose Doctor</option>
+                            {% for doctor in doctors %}
+                                <option value="{{doctor.full_name}}">{{doctor.full_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-lg-6 mt-5">
+                        <input name="patient_name" type="text" class="form-control form-control-lg" placeholder="Patient Name...">
+                    </div>
+                </div>
+
+
+                <div class="mt-0">
+                    <input name="date" type="date" class="form-control form-control-lg">
+                </div>
+
+                <div class="mt-2">
+                    <input name="time" type="time" class="form-control form-control-lg">
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-outline-info btn-lg fw-bolder add-doc-btn">Add Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "patients/add_patient.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="shadow-lg p-5 add-doc-container">
+            <div class="text-center">
+                <h1 class="d-inline-block border-bottom border-3 border-info mb-5">Update Appointment</h1>
+            </div>
+            <form action="#" method="POST">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-lg-6 mt-2">
+                        <select name="doctor" id="doctor" class="form-select form-select-lg">
+                            <option value="{{ appointment.doctor }}" selected>{{ appointment.doctor }}</option>
+                            {% for doctor in doctors %}
+                                {% if doctor.full_name != doc %}
+                                    <option value="{{doctor.full_name}}">{{doctor.full_name}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mb-3">
+                        <input name="patient_name" type="text" class="form-control form-control-lg" placeholder="Patient Name.."
+                        value="{{ appointment.patient_name }}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <input name="date" type="date" class="form-control form-control-lg" value="{{ appointment.formatted_date }}">
+                </div>
+
+                <div class="mb-3">
+                    <input name="time" type="time" class="form-control form-control-lg" value="{{ appointment.formatted_time }}">
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-outline-info btn-lg fw-bolder add-doc-btn">Update Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "doctors/add_doctor.html" %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="shadow-lg p-5 add-doc-container">
+            <div class="text-center">
+                <h1 class="d-inline-block border-bottom border-3 border-info mb-5">Update Doctor</h1>
+            </div>
+            <form action="{% url 'edit_doctor' doctor.id %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3 mt-5">
+                    <input name="full_name" type="text" class="form-control form-control-lg" placeholder="Full Name..."
+                    value="{{ doctor.full_name }}">
+                </div>
+
+                <div class="mb-3">
+                    <input name="phone_number" type="number" class="form-control form-control-lg" placeholder="Mobile Number..."
+                    value="{{ doctor.mobile_number }}">
+                </div>
+
+                <div class="">
+                    <input name="secialization" type="text" class="form-control form-control-lg" placeholder="Secialization..."
+                    value="{{ doctor.secilization }}">
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-outline-info btn-lg fw-bolder add-doc-btn">Update Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
